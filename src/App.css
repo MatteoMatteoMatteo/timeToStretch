@@ -8,27 +8,28 @@
   display: flex;
   flex-direction: column;
   margin: auto;
-  margin-top: 100px;
+  margin-top: 50px;
   font-size: 2rem;
   font-weight: bolder;
   color: white;
   letter-spacing: 2px;
-  width: 500px;
-  background-color: #05386b;
+  max-width: 500px;
+  background-color: #7f8b4b;
   border: solid 7px white;
   padding: 50px;
   border-radius: 10px 10px 0px 0px;
   text-align: center;
   justify-content: flex-start;
   align-items: center;
+  min-height: 463px;
 }
 
 .button {
-  width: 100px;
-  background-color: #379683;
+  width: 130px;
+  height: 130px;
+  background-color: #05386b;
   border: none;
   color: white;
-  padding: 15px 15px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -36,13 +37,16 @@
   cursor: pointer;
   transition: 300ms ease;
   outline: none;
-  border-radius: 50px;
+  border-radius: 130px;
   margin-bottom: 50px;
   margin-top: 100px;
+  -webkit-box-shadow: 6px 7px 5px 0px rgba(255, 255, 255, 0.75);
+  -moz-box-shadow: 6px 7px 5px 0px rgba(255, 255, 255, 0.75);
+  box-shadow: 6px 7px 5px 0px rgba(255, 255, 255, 0.75);
 }
 
 .button:hover {
-  transform: scale(1.5) rotate(20deg);
+  transform: scale(1.5) rotate(8deg);
   transition: 300ms ease;
 }
 
