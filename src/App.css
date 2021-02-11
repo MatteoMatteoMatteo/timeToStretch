@@ -1,3 +1,9 @@
+.loading {
+  text-align: center;
+  margin-top: 300px;
+  font-size: 1.3rem;
+}
+
 .App {
   display: flex;
   flex-direction: column;
@@ -31,9 +37,6 @@
   transition: 300ms ease;
   outline: none;
   border-radius: 50px;
-  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
   margin-bottom: 50px;
   margin-top: 100px;
 }
