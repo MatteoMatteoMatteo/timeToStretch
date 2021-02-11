@@ -56,7 +56,7 @@ function App() {
       var ohoh=false
       setInterval(()=>{
         var item = songArray[Math.floor(Math.random() * songArray.length)]
-          if(new Date().getMinutes()==23 && item.state==="stopped" && !ohoh){
+          if(new Date().getMinutes()==59 && item.state==="stopped" && !ohoh){
             setSong(true)
             item.start()
             ohoh=true
