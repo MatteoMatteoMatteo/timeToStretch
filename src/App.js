@@ -51,10 +51,11 @@ function App() {
   } 
 
   const handleAudio = () => {
-    setTimeout(()=>{var item = songArray[Math.floor(Math.random() * songArray.length)];
+    setTimeout(()=>{
       Tone.start()
       var ohoh=false
       setInterval(()=>{
+        var item = songArray[Math.floor(Math.random() * songArray.length)]
           if(new Date().getMinutes()==23 && item.state==="stopped" && !ohoh){
             setSong(true)
             item.start()
