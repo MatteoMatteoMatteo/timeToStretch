@@ -10,37 +10,20 @@ import song5 from "./Assets/song5.mp3";
 import song6 from "./Assets/song6.mp3";
 import song7 from "./Assets/song7.mp3";
 import song8 from "./Assets/song8.mp3";
-import song9 from "./Assets/song9.mp3";
 
 function App() {
   const liClasses = classNames(
     'button'
   );
 
-
-  const songArray = [
-    new Tone.Player({url:song1}).toMaster(),
-    new Tone.Player({url:song2}).toMaster(),
-    new Tone.Player({url:song3}).toMaster(),
-    new Tone.Player({url:song4}).toMaster(),
-    new Tone.Player({url:song5}).toMaster(),
-    new Tone.Player({url:song6}).toMaster(),
-    new Tone.Player({url:song7}).toMaster(),
-    new Tone.Player({url:song8}).toMaster(),
-    new Tone.Player({url:song9}).toMaster()]
   
-  const [buffer, setBuffer] = useState(false);
+
+  const songArray=[1,2,3,4,5,6,7,8,9]
+  const [buffer, setBuffer] = useState(true);
   const [date, setDate] = useState();
   const [stretch, setStretch] = useState();
   const [letsGo, setLetsGo] = useState(false);
   const [song, setSong] = useState(false);
-
-  useEffect(()=>{
-    Tone.Buffer.on("load", ()=> {
-      setBuffer(true)
-    })
-  },[])
-
 
   const handleAll = () => {
 
@@ -50,21 +33,52 @@ function App() {
   handleAudio()
   } 
 
+  const helper = (id) => {
+    if(id==1){
+      return song1
+    }
+    if(id==2){
+      return song2
+    }
+    if(id==3){
+      return song3
+    }
+    if(id==4){
+      return song4
+    }
+    if(id==5){
+      return song5
+    }
+    if(id==6){
+      return song6
+    }
+    if(id==7){
+      return song7
+    }
+    if(id==8){
+      return song8
+    }
+  }
+
   const handleAudio = () => {
+    Tone.start()
     setTimeout(()=>{
-      Tone.start()
+
       var ohoh=false
       setInterval(()=>{
-        var item = songArray[Math.floor(Math.random() * songArray.length)]
-          if(new Date().getMinutes()==59 && item.state==="stopped" && !ohoh){
+
+
+          if(new Date().getMinutes()==19 && !ohoh){
+            var item = songArray[Math.floor(Math.random() * songArray.length)]
+            var player=new Tone.Player({url:helper(item)}).toMaster();
             setSong(true)
-            item.start()
+            player.autostart=true;
             ohoh=true
-          }else if(item.state==="stopped" && ohoh){
+          }else if(new Date().getMinutes()==1 && player.state==="stopped" && ohoh){
             setSong(false)
             ohoh=false
           }
-      },1000)},4000)
+      },1000)},0)
   }
 
   const handleStretch = () => {
