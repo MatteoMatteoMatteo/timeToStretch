@@ -129,7 +129,7 @@ function App() {
       </div>
 
       {letsGo ? (
-        song ? (
+        !song ? (
           <Fragment>
             <div className="until" style={{ marginBottom: "35px", marginTop: "50px" }}>
               Let's Stretch!
