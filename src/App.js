@@ -17,6 +17,7 @@ function App() {
 
   var interval;
   var interval2;
+  var interval3;
 
   const songArray = [1, 2, 3, 4, 5, 6, 7, 8];
   const [buffer, setBuffer] = useState(true);
@@ -61,24 +62,29 @@ function App() {
 
   const handleAudio = () => {
     Tone.start();
+    var item = songArray[Math.floor(Math.random() * songArray.length)];
+    var player;
+    interval3 = setInterval(() => {
+      if (new Date().getMinutes() == 55) {
+        player = new Tone.Player({ url: helper(item) }).toDestination();
+      }
+    }, 50000);
 
     var ohoh = false;
     interval = setInterval(() => {
       if (!ohoh && new Date().getMinutes() == 0) {
-        var item = songArray[Math.floor(Math.random() * songArray.length)];
-        var player = new Tone.Player({ url: helper(item) }).toDestination();
+        ohoh = true;
         setSong(true);
-        player.autostart = true;
         clearInterval(interval);
+        player.start();
         player.onstop = () => {
           setSong(false);
-          ohoh = false;
           setLetsGo(false);
           clearInterval(interval2);
-          ohoh = true;
+          clearInterval(interval3);
         };
       }
-    }, 30000);
+    }, 1000);
   };
 
   const handleStretch = () => {
