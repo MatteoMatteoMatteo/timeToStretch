@@ -116,7 +116,7 @@ function App() {
 
   return buffer ? (
     <div className="App">
-      <div className="item">MOVE AND WORK</div>
+      <div className="item">TIME TO STRETCH</div>
       <img src={pic} style={{ width: "70px", padding: "20px" }}></img>
       <div className="item" style={{ fontSize: "1.3rem", fontStyle: "italic", padding: "5px" }}>
         every full hour
@@ -144,7 +144,7 @@ function App() {
           <Fragment>
             <div className="until">
               {" "}
-              In <span style={{ color: "#05386b" }}>{stretch}</span> Minutes
+              Next Stretch in <span style={{ color: "#05386b" }}>{stretch}</span> Minutes
             </div>
             {/* <div className="time">Time: {date}</div> */}
           </Fragment>
