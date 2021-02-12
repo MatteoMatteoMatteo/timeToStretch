@@ -3,6 +3,7 @@ import classNames from "classnames";
 import { Fragment, useState, useEffect } from "react";
 import * as Tone from "tone";
 import pic from "./Assets/logo.png";
+import gif from "./Assets/stretching.gif";
 import song1 from "./Assets/song1.mp3";
 import song2 from "./Assets/song2.mp3";
 import song3 from "./Assets/song3.mp3";
@@ -129,22 +130,12 @@ function App() {
       </div>
 
       {letsGo ? (
-        !song ? (
+        song ? (
           <Fragment>
             <div className="until" style={{ marginBottom: "35px", marginTop: "50px" }}>
               Let's Stretch!
             </div>
-            <iframe
-              src="https://giphy.com/embed/60wLzllpJn15e"
-              width="430"
-              height="310"
-              style={{ pointerEvents: "none" }}
-              frameBorder="0"
-              allowFullScreen
-            ></iframe>
-            <p>
-              <a href="https://giphy.com/gifs/stretching-xhDniL1GXz43u"></a>
-            </p>
+            <img src={gif} style={{ width: "300px" }}></img>
           </Fragment>
         ) : (
           <Fragment>
