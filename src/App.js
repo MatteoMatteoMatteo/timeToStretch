@@ -64,7 +64,7 @@ function App() {
   const handleAudio = () => {
     Tone.start();
     var item = songArray[Math.floor(Math.random() * songArray.length)];
-    var player;
+    var player = null;
     interval3 = setInterval(() => {
       if (new Date().getMinutes() == 55) {
         player = new Tone.Player({ url: helper(item) }).toDestination();
@@ -133,7 +133,7 @@ function App() {
         song ? (
           <Fragment>
             <div className='until' style={{ marginBottom: '35px', marginTop: '50px' }}>
-              Let's Stretch!
+              Let's Stretch Luuucie!
             </div>
           </Fragment>
         ) : (
