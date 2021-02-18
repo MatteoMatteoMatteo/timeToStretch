@@ -12,6 +12,7 @@ import song5 from './Assets/song5.mp3';
 import song6 from './Assets/song6.mp3';
 import song7 from './Assets/song7.mp3';
 import song8 from './Assets/song8.mp3';
+import song9 from './Assets/song9.mp3';
 
 function App() {
   const liClasses = classNames('button');
@@ -59,17 +60,16 @@ function App() {
     if (id == 8) {
       return song8;
     }
+    if (id == 9) {
+      return song9;
+    }
   };
 
   const handleAudio = () => {
     Tone.start();
     var item = songArray[Math.floor(Math.random() * songArray.length)];
     var player = null;
-    interval3 = setInterval(() => {
-      if (new Date().getMinutes() == 55) {
-        player = new Tone.Player({ url: helper(item) }).toDestination();
-      }
-    }, 50000);
+    player = new Tone.Player({ url: helper(item) }).toDestination();
 
     var ohoh = false;
     interval = setInterval(() => {
@@ -82,7 +82,6 @@ function App() {
           setSong(false);
           setLetsGo(false);
           clearInterval(interval2);
-          clearInterval(interval3);
         };
       }
     }, 1000);
@@ -133,7 +132,7 @@ function App() {
         song ? (
           <Fragment>
             <div className='until' style={{ marginBottom: '35px', marginTop: '50px' }}>
-              Let's Stretch Luuucie!
+              Let's Stretch!
             </div>
           </Fragment>
         ) : (
