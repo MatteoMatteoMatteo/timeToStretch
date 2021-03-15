@@ -13,6 +13,7 @@ import song6 from './Assets/song6.mp3';
 import song7 from './Assets/song7.mp3';
 import song8 from './Assets/song8.mp3';
 import song9 from './Assets/song9.mp3';
+// import song10 from './Assets/song10.mp3';
 
 function App() {
   const liClasses = classNames('button');
@@ -63,6 +64,9 @@ function App() {
     if (id == 9) {
       return song9;
     }
+    // if (id == 10) {
+    //   return song10;
+    // }
   };
 
   const handleAudio = () => {
@@ -121,39 +125,42 @@ function App() {
   };
 
   return (
-    <div className='App'>
-      <div className='item'>TIME TO STRETCH</div>
-      <img src={pic} style={{ width: '70px', padding: '20px' }}></img>
-      <div className='item' style={{ fontSize: '1.3rem', fontStyle: 'italic', padding: '5px' }}>
-        every full hour
-      </div>
+    <div className='wrapper'>
+      <div className='contentLayout'>
+        <div className='App'>
+          <div className='item'>TIME TO STRETCH</div>
+          <img src={pic} style={{ width: '70px', padding: '20px', marginTop: '20px' }}></img>
+          <div className='item' style={{ fontSize: '1.3rem', fontStyle: 'italic', padding: '5px' }}>
+            every full hour
+          </div>
 
-      {letsGo ? (
-        song ? (
-          <Fragment>
-            <div className='until' style={{ marginBottom: '35px', marginTop: '50px' }}>
-              Let's Stretch!
-            </div>
-          </Fragment>
-        ) : (
-          <Fragment>
-            <div className='until'>
-              {' '}
-              Next Stretch in <span style={{ color: '#05386b' }}>{stretch}</span> Minutes
-            </div>
-            {/* <div className="time">Time: {date}</div> */}
-          </Fragment>
-        )
-      ) : (
-        <button
-          onClick={() => {
-            handleAll();
-          }}
-          className={liClasses}>
-          Begin
-        </button>
-      )}
-      <img src={gif} style={{ display: song ? 'block' : 'none', width: '300px' }}></img>
+          {letsGo ? (
+            song ? (
+              <Fragment>
+                <div className='until' style={{ marginBottom: '35px', marginTop: '50px' }}>
+                  Let's Stretch!
+                </div>
+              </Fragment>
+            ) : (
+              <Fragment>
+                <div className='until'>
+                  {' '}
+                  Next Stretch in <span style={{ color: '#05386b' }}>{stretch}</span> Minutes
+                </div>
+              </Fragment>
+            )
+          ) : (
+            <button
+              onClick={() => {
+                handleAll();
+              }}
+              className={liClasses}>
+              Begin
+            </button>
+          )}
+          <img src={gif} style={{ display: song ? 'block' : 'none', width: '300px' }}></img>
+        </div>
+      </div>
     </div>
   );
 }
