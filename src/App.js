@@ -13,7 +13,7 @@ import song6 from './Assets/song6.mp3';
 import song7 from './Assets/song7.mp3';
 import song8 from './Assets/song8.mp3';
 import song9 from './Assets/song9.mp3';
-// import song10 from './Assets/song10.mp3';
+import song10 from './Assets/song10.mp3';
 
 function App() {
   const liClasses = classNames('button');
@@ -64,9 +64,9 @@ function App() {
     if (id == 9) {
       return song9;
     }
-    // if (id == 10) {
-    //   return song10;
-    // }
+    if (id == 10) {
+      return song10;
+    }
   };
 
   const handleAudio = () => {
