@@ -155,7 +155,7 @@ function App() {
                 handleAll();
               }}
               className={liClasses}>
-              Begin
+              Start
             </button>
           )}
           <img src={gif} style={{ display: song ? 'block' : 'none', width: '300px' }}></img>
