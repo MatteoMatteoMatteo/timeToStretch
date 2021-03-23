@@ -128,7 +128,7 @@ function App() {
     <div className='wrapper'>
       <div className='contentLayout'>
         <div className='App'>
-          <div className='item'>TIME TO STRETCH</div>
+          <div className='item'>Move & Work</div>
           <img src={pic} style={{ width: '70px', padding: '20px', marginTop: '20px' }}></img>
           <div className='item' style={{ fontSize: '1.3rem', fontStyle: 'italic', padding: '5px' }}>
             every full hour
