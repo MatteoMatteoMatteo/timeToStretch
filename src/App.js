@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { Fragment, useState, useEffect } from 'react';
 import * as Tone from 'tone';
 import pic from './Assets/logo.png';
-import gif from './Assets/stretching.gif';
+import gif from './Assets/gif1.gif';
 import song1 from './Assets/song1.mp3';
 import song2 from './Assets/song2.mp3';
 import song3 from './Assets/song3.mp3';
